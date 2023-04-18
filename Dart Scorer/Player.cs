@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace DartScorer.Untitled
 {
-	public class Computer
+	public class Player
 	{
-		string name = Dartbot;
-		int skillLevel;
+		string name;
 		int score;
 		int dartsThrown;
 
-		public Computer()
+		public Player()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void calculateScore()
+		public void incrementScore()
 		{
 			throw new NotImplementedException();
 		}
