@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Dart_Scorer
 {
-    public partial class Form1 : Form
+    public partial class Match : Form
     {
-        public Form1()
+        public Match()
         {
             InitializeComponent();
         }

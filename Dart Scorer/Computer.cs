@@ -8,7 +8,7 @@ namespace DartScorer.Untitled
 {
 	public class Computer
 	{
-		string name = Dartbot;
+		string name = "Dartbot";
 		int skillLevel;
 		int score;
 		int dartsThrown;
