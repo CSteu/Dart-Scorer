@@ -43,10 +43,11 @@
             // 
             this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
             this.txtScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtScore.Location = new System.Drawing.Point(220, 104);
+            this.txtScore.Location = new System.Drawing.Point(330, 160);
+            this.txtScore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtScore.Name = "txtScore";
             this.txtScore.ReadOnly = true;
-            this.txtScore.Size = new System.Drawing.Size(265, 128);
+            this.txtScore.Size = new System.Drawing.Size(396, 189);
             this.txtScore.TabIndex = 3;
             this.txtScore.Text = "501";
             this.txtScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -54,10 +55,11 @@
             // txtCurrPlayer
             // 
             this.txtCurrPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txtCurrPlayer.Location = new System.Drawing.Point(220, 45);
+            this.txtCurrPlayer.Location = new System.Drawing.Point(330, 69);
+            this.txtCurrPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrPlayer.Name = "txtCurrPlayer";
             this.txtCurrPlayer.ReadOnly = true;
-            this.txtCurrPlayer.Size = new System.Drawing.Size(265, 53);
+            this.txtCurrPlayer.Size = new System.Drawing.Size(396, 75);
             this.txtCurrPlayer.TabIndex = 1;
             this.txtCurrPlayer.Text = "Player 1";
             this.txtCurrPlayer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -65,17 +67,20 @@
             // txtCurrScore
             // 
             this.txtCurrScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.txtCurrScore.Location = new System.Drawing.Point(220, 278);
+            this.txtCurrScore.Location = new System.Drawing.Point(330, 428);
+            this.txtCurrScore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrScore.Name = "txtCurrScore";
-            this.txtCurrScore.Size = new System.Drawing.Size(176, 38);
+            this.txtCurrScore.Size = new System.Drawing.Size(262, 53);
             this.txtCurrScore.TabIndex = 0;
+            this.txtCurrScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCurrScore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCurrScore_KeyDown);
             // 
             // btnEnterScore
             // 
-            this.btnEnterScore.Location = new System.Drawing.Point(402, 278);
+            this.btnEnterScore.Location = new System.Drawing.Point(603, 428);
+            this.btnEnterScore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEnterScore.Name = "btnEnterScore";
-            this.btnEnterScore.Size = new System.Drawing.Size(83, 38);
+            this.btnEnterScore.Size = new System.Drawing.Size(124, 58);
             this.btnEnterScore.TabIndex = 4;
             this.btnEnterScore.Text = "ENTER";
             this.btnEnterScore.UseVisualStyleBackColor = true;
@@ -84,11 +89,12 @@
             // txtStats
             // 
             this.txtStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.txtStats.Location = new System.Drawing.Point(491, 45);
+            this.txtStats.Location = new System.Drawing.Point(736, 69);
+            this.txtStats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtStats.Multiline = true;
             this.txtStats.Name = "txtStats";
             this.txtStats.ReadOnly = true;
-            this.txtStats.Size = new System.Drawing.Size(209, 292);
+            this.txtStats.Size = new System.Drawing.Size(312, 447);
             this.txtStats.TabIndex = 5;
             this.txtStats.Text = "Three Dart Average:\r\n0.00\r\nFirst Nine Average:\r\n0.00\r\nLast Score:\r\n0\r\nDarts Throw" +
     "n:\r\n0";
@@ -97,11 +103,12 @@
             // txtPlayerList
             // 
             this.txtPlayerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.txtPlayerList.Location = new System.Drawing.Point(27, 45);
+            this.txtPlayerList.Location = new System.Drawing.Point(40, 69);
+            this.txtPlayerList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPlayerList.Multiline = true;
             this.txtPlayerList.Name = "txtPlayerList";
             this.txtPlayerList.ReadOnly = true;
-            this.txtPlayerList.Size = new System.Drawing.Size(187, 292);
+            this.txtPlayerList.Size = new System.Drawing.Size(278, 447);
             this.txtPlayerList.TabIndex = 7;
             this.txtPlayerList.Text = "player 1: 501\r\nAverage: 0\r\nplayer 2: 501\r\nAverage: 0\r\nplayer 3: 501\r\nAverage: 0\r\n" +
     "player 4: 501\r\nAverage: 0\r\n";
@@ -109,9 +116,10 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(27, 12);
+            this.btnRestart.Location = new System.Drawing.Point(40, 18);
+            this.btnRestart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(75, 23);
+            this.btnRestart.Size = new System.Drawing.Size(112, 35);
             this.btnRestart.TabIndex = 8;
             this.btnRestart.Text = "Restart Game";
             this.btnRestart.UseVisualStyleBackColor = true;
@@ -120,25 +128,27 @@
             // txtLastScore
             // 
             this.txtLastScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtLastScore.Location = new System.Drawing.Point(220, 238);
+            this.txtLastScore.Location = new System.Drawing.Point(330, 366);
+            this.txtLastScore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLastScore.Name = "txtLastScore";
             this.txtLastScore.ReadOnly = true;
-            this.txtLastScore.Size = new System.Drawing.Size(264, 26);
+            this.txtLastScore.Size = new System.Drawing.Size(394, 35);
             this.txtLastScore.TabIndex = 9;
             this.txtLastScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCmp
             // 
-            this.txtCmp.Location = new System.Drawing.Point(220, 323);
+            this.txtCmp.Location = new System.Drawing.Point(330, 497);
+            this.txtCmp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCmp.Name = "txtCmp";
-            this.txtCmp.Size = new System.Drawing.Size(176, 20);
+            this.txtCmp.Size = new System.Drawing.Size(262, 26);
             this.txtCmp.TabIndex = 10;
             // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 366);
+            this.ClientSize = new System.Drawing.Size(1101, 563);
             this.Controls.Add(this.txtCmp);
             this.Controls.Add(this.txtLastScore);
             this.Controls.Add(this.btnRestart);
@@ -148,6 +158,7 @@
             this.Controls.Add(this.txtCurrScore);
             this.Controls.Add(this.txtCurrPlayer);
             this.Controls.Add(this.txtScore);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Game";
             this.Text = "Game";
             this.ResumeLayout(false);

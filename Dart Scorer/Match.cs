@@ -20,6 +20,9 @@ namespace Dart_Scorer
             txtPlayer2.Hide();
             txtPlayer3.Hide();
             txtPlayer4.Hide();
+            txtDartbot.Hide();
+            dartbotLabel.Visible = false;
+            upDownSkillLevel.Visible = false;
         }
 
         private void btnStartMatch_Click(object sender, EventArgs e)
@@ -86,6 +89,26 @@ namespace Dart_Scorer
                 startScore = 701;
             }
 
+        }
+
+        private void computerCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if(computerCheck.Checked)
+            {
+                playerUpDown.Value = 1;
+                playerUpDown.Hide();
+                playerUpDown_ValueChanged(sender, e);
+                txtDartbot.Show();
+                dartbotLabel.Visible = true;
+                upDownSkillLevel.Visible = true;
+            }
+            else
+            {
+                playerUpDown.Show();
+                txtDartbot.Hide();
+                dartbotLabel.Visible = false;
+                upDownSkillLevel.Visible = false;
+            }
         }
     }
 }

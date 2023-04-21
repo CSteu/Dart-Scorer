@@ -12,7 +12,12 @@ namespace DartScorer.Untitled
         public float[] firstNine = new float[4];
 		public int[] totalPoints = new int[4];
 		public int[] totalDarts = new int[4];
-		
+
+		public float caverage;
+		public float cfirstNine;
+		public int ctotalPoints;
+        public int ctotalDarts;
+
 
         public StatsSheet()
 		{
@@ -21,6 +26,8 @@ namespace DartScorer.Untitled
 				totalPoints[k] = 0;
 				totalDarts[k] = 0;
 			}
+			ctotalDarts = 0;
+			ctotalPoints = 0;
 		}
 
 

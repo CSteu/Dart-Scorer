@@ -20,6 +20,7 @@ namespace Dart_Scorer
         public int turn = 0;
         Player[] player;
         Computer computer;
+        private bool computerGame;
         
         StatsSheet statsSheet = new StatsSheet();
         public Game(int score, int num, string[] n, bool comp, int compdif)
@@ -27,6 +28,7 @@ namespace Dart_Scorer
             InitializeComponent();
             startScore = score;
             numPlayers = num;
+            computerGame = comp;
             player = new Player[numPlayers];
             for(int i = 0; i < numPlayers; i++)
             {
@@ -46,11 +48,7 @@ namespace Dart_Scorer
             txtCurrPlayer.Text = player[0].name;
             txtScore.Text = player[0].getScore().ToString();
             txtPlayerList.Clear();
-            for (int i = 0; i < numPlayers; i++)
-            {
-                txtPlayerList.Text += player[i].name + ": " + player[i].getScore() + Environment.NewLine;
-                txtPlayerList.Text += "Average: " + (float)Math.Round(statsSheet.average[i], 2) + Environment.NewLine + Environment.NewLine;
-            }
+            updateGame();
         }
 
         public void updateGame()
@@ -63,6 +61,11 @@ namespace Dart_Scorer
             {
                 txtPlayerList.Text += player[i].name + ": " + player[i].getScore() + Environment.NewLine;
                 txtPlayerList.Text += "Average: " + (float)Math.Round(statsSheet.average[i], 2) + Environment.NewLine + Environment.NewLine;
+            }
+            if(computerGame)
+            {
+                txtPlayerList.Text += computer.name + ": " + computer.getScore() + Environment.NewLine;
+                txtPlayerList.Text += "Average: " + (float)Math.Round(statsSheet.caverage, 2) + Environment.NewLine + Environment.NewLine;
             }
         }
 
@@ -83,8 +86,7 @@ namespace Dart_Scorer
             statsSheet.addDarts(3, up);
             statsSheet.calculateAverage(up);
 
-            computer.calculateScore();
-            txtCmp.Text += computer.score.ToString() + " ";
+            txtCmp.Text += computer.calculateScore().ToString() + " ";
 
             updateGame();
             turn++;
