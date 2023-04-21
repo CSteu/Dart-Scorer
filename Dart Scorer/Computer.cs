@@ -15,37 +15,37 @@ namespace DartScorer.Untitled
 
 		public Computer()
 		{
-			throw new NotImplementedException();
+			
 		}
 
-		public void calculateScore()
+		public int calculateScore(int startScore)
 		{
-			throw new NotImplementedException();
+			return startScore - score;
 		}
 
 		public int getScore()
 		{
-			throw new NotImplementedException();
+			return score;
 		}
 
 		public void resetScore()
 		{
-			throw new NotImplementedException();
+			score = 0;
 		}
 
 		public void incrementDarts()
 		{
-			throw new NotImplementedException();
+			dartsThrown++;
 		}
 
 		public int getDarts()
 		{
-			throw new NotImplementedException();
+			return dartsThrown;
 		}
 
 		public void resetDarts()
 		{
-			throw new NotImplementedException();
+			dartsThrown = 0;
 		}
 	}
 }

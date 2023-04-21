@@ -29,20 +29,14 @@ namespace Dart_Scorer
 
             try
             {
-                String querry = "SELECT * FROM Login WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
-                DataTable dtable = new DataTable();
-                sda.Fill(dtable);
-
-                if(dtable.Rows.Count > 0 )
+                if(username == "admin" && password == "admin" )
                 {
                     username = txtUsername.Text;
                     password = txtPassword.Text;
 
                     Match form2 = new Match();
                     form2.Show();
-                    this.Hide();
                 }
                 else
                 {

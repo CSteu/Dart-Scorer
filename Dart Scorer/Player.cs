@@ -1,50 +1,60 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DartScorer.Untitled
 {
 	public class Player
 	{
-		string name;
-		int score;
-		int dartsThrown;
+		public string name;
+		public int score;
+		public int dartsThrown;
+		public int totPoints = 0;
 
 		public Player()
 		{
-			throw new NotImplementedException();
+			name = "Player";
 		}
 
-		public void incrementScore()
+		public Player(string player, int startScore)
 		{
-			throw new NotImplementedException();
+			name = player;
+			score = startScore;
+		}
+
+		public void decrementScore(int lastTurn)
+		{
+			score -= lastTurn;
+			totPoints += lastTurn;
 		}
 
 		public int getScore()
 		{
-			throw new NotImplementedException();
+			return score;
 		}
 
 		public void resetScore()
 		{
-			throw new NotImplementedException();
+			score = 0;
 		}
 
-		public void incrementDarts()
+		public void incrementDarts(int darts)
 		{
-			throw new NotImplementedException();
+			dartsThrown += darts;
 		}
 
 		public int getDarts()
 		{
-			throw new NotImplementedException();
+			return dartsThrown;
 		}
 
 		public void resetDarts()
 		{
-			throw new NotImplementedException();
+			dartsThrown = 0;
 		}
 	}
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Dart_Scorer
 {
@@ -17,16 +18,21 @@ namespace Dart_Scorer
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-R2CKJ5T;Initial Catalog=DartScorer;Integrated Security=True");
+        
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType= CommandType.Text;
-            cmd.CommandText = "insert into Login values('" + txtUsername.Text + "','" + txtPassword.Text + "')";
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            StreamReader sr = new StreamReader(@"db.txt");
+            string olddata = sr.ReadLine();
+            sr.Close();
+            string[] data = new string[3];
+            data[0] = txtUsername.Text;
+            data[1] = txtPassword.Text;
+            data[2] = txtNickname.Text;
+            StreamWriter sw = new StreamWriter(@"db.txt");
+
+            sw.Write(olddata + (Environment.NewLine) + "user=" + data[0] + ",pass=" + data[1] + ",nick=" + data[2]);
+
 
             Login form1 = new Login();
             form1.Show();
