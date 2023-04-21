@@ -25,7 +25,7 @@ namespace DartScorer.Untitled
 
 
 
-		public void calculateAverage(int totScore, int dartsThrown, int playerNum)
+		public void calculateAverage(int playerNum)
 		{
 			average[playerNum] = (float)totalPoints[playerNum] / totalDarts[playerNum];
 		}

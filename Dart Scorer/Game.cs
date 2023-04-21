@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Dart_Scorer
 {
@@ -15,29 +16,41 @@ namespace Dart_Scorer
     {
         public int startScore;
         public int numPlayers;
+        public string[] names;
+        public int turn = 0;
+        Player[] player;
+        Computer computer;
         
         StatsSheet statsSheet = new StatsSheet();
-        public Game(int score, int num)
+        public Game(int score, int num, string[] n, bool comp, int compdif)
         {
             InitializeComponent();
-            gameSetup();
             startScore = score;
             numPlayers = num;
+            player = new Player[numPlayers];
+            for(int i = 0; i < numPlayers; i++)
+            {
+                player[i] = new Player(n[i], score);
+            }
+            if (comp)
+            {
+                computer = new Computer(compdif, score);
+            }
+            gameSetup();
         }
-        Player[] player = new Player[]
-        {
-            new Player("player 1", 501),
-            new Player("player 2", 501),
-            new Player("player 3", 501),
-            new Player("player 4", 501)
-        };
 
-        int turn = 0;
+        
+
         public void gameSetup()
-        {
+        { 
             txtCurrPlayer.Text = player[0].name;
             txtScore.Text = player[0].getScore().ToString();
-            txtPlayerList.Text = player[0].name + ": " + player[0].getScore() + "\n" + player[1].name + ": " + player[1].getScore();
+            txtPlayerList.Clear();
+            for (int i = 0; i < numPlayers; i++)
+            {
+                txtPlayerList.Text += player[i].name + ": " + player[i].getScore() + Environment.NewLine;
+                txtPlayerList.Text += "Average: " + (float)Math.Round(statsSheet.average[i], 2) + Environment.NewLine + Environment.NewLine;
+            }
         }
 
         public void updateGame()
@@ -48,34 +61,72 @@ namespace Dart_Scorer
             txtPlayerList.Clear();
             for (int i = 0; i < numPlayers; i++)
             {
-                txtPlayerList.Text += player[i].name + ": " + player[i].getScore() + "\n";
-                txtPlayerList.Text += "Average: " + statsSheet.average[i] + "\n";
+                txtPlayerList.Text += player[i].name + ": " + player[i].getScore() + Environment.NewLine;
+                txtPlayerList.Text += "Average: " + (float)Math.Round(statsSheet.average[i], 2) + Environment.NewLine + Environment.NewLine;
             }
         }
 
         private void btnEnterScore_Click(object sender, EventArgs e)
         {
+            int currScore = int.Parse(txtCurrScore.Text);
+
+            if (currScore < 0 || currScore > 180)
+                return;
+
             int up = turn % numPlayers;
-            player[up].decrementScore(int.Parse(txtCurrScore.Text));
-            statsSheet.addScore(int.Parse(txtCurrScore.Text), up);
+            if (player[up].score - currScore >= 0)
+            {
+                player[up].decrementScore(currScore);
+                statsSheet.addScore(currScore, up);
+            }
             player[up].incrementDarts(3);
             statsSheet.addDarts(3, up);
+            statsSheet.calculateAverage(up);
 
+            computer.calculateScore();
+            txtCmp.Text += computer.score.ToString() + " ";
 
-            updateStats();
             updateGame();
             turn++;
+            updateStats();
+            txtLastScore.Text = "Last Score: " + txtCurrScore.Text;
             txtCurrScore.Clear();
-            textBox1.Text = statsSheet.totalPoints[0].ToString();
+            if (player[up].score == 0)
+            {
+                restartGame();
+            }
         }
 
         public void updateStats()
         {
             int up = turn % numPlayers;
-            statsSheet.calculateAverage(player[up].totPoints, player[up].dartsThrown, up);
-            txtStats.Text = "Three Dart Average:"+ Environment.NewLine + statsSheet.average[up].ToString() + Environment.NewLine + "First Nine Average:" + Environment.NewLine + 
-                statsSheet.average[up].ToString() + Environment.NewLine + "Last Score:" + Environment.NewLine + txtCurrScore.Text + Environment.NewLine +
-                "Darts Thrown:" + Environment.NewLine + player[up].dartsThrown;
+            txtStats.Text = player[up].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) 
+                + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) + Environment.NewLine + "Total Points Scored: "
+                + Environment.NewLine + statsSheet.totalPoints[up] + Environment.NewLine +"Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[up];
+        }
+
+        private void txtCurrScore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnEnterScore.PerformClick();
+            }
+        }
+
+        private void restartGame()
+        {
+            for (int i = 0; i < numPlayers; i++)
+            {
+                player[i].score = startScore;
+                player[i].dartsThrown = 0;
+            }
+            turn = 0;
+            updateGame();
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            restartGame();
         }
     }
 }

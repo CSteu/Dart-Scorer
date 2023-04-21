@@ -31,22 +31,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.computerCheck = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn301 = new System.Windows.Forms.Button();
             this.playerUpDown = new System.Windows.Forms.NumericUpDown();
-            this.btn701 = new System.Windows.Forms.Button();
-            this.btn501 = new System.Windows.Forms.Button();
             this.btnStartMatch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn1leg = new System.Windows.Forms.Button();
-            this.btn3leg = new System.Windows.Forms.Button();
-            this.btn5leg = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtPlayer1 = new System.Windows.Forms.TextBox();
             this.txtPlayer2 = new System.Windows.Forms.TextBox();
             this.txtPlayer3 = new System.Windows.Forms.TextBox();
             this.txtPlayer4 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb301 = new System.Windows.Forms.RadioButton();
+            this.rb501 = new System.Windows.Forms.RadioButton();
+            this.rb701 = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rb5leg = new System.Windows.Forms.RadioButton();
+            this.rb3leg = new System.Windows.Forms.RadioButton();
+            this.rb1leg = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.playerUpDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +65,7 @@
             // 
             this.computerCheck.AutoSize = true;
             this.computerCheck.Location = new System.Drawing.Point(290, 95);
-            this.computerCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.computerCheck.Margin = new System.Windows.Forms.Padding(2);
             this.computerCheck.Name = "computerCheck";
             this.computerCheck.Size = new System.Drawing.Size(15, 14);
             this.computerCheck.TabIndex = 2;
@@ -80,20 +82,10 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Players:";
             // 
-            // btn301
-            // 
-            this.btn301.Location = new System.Drawing.Point(349, 77);
-            this.btn301.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn301.Name = "btn301";
-            this.btn301.Size = new System.Drawing.Size(93, 32);
-            this.btn301.TabIndex = 5;
-            this.btn301.Text = "301";
-            this.btn301.UseVisualStyleBackColor = true;
-            // 
             // playerUpDown
             // 
             this.playerUpDown.Location = new System.Drawing.Point(156, 94);
-            this.playerUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playerUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.playerUpDown.Maximum = new decimal(new int[] {
             4,
             0,
@@ -113,26 +105,6 @@
             0,
             0});
             this.playerUpDown.ValueChanged += new System.EventHandler(this.playerUpDown_ValueChanged);
-            // 
-            // btn701
-            // 
-            this.btn701.Location = new System.Drawing.Point(543, 77);
-            this.btn701.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn701.Name = "btn701";
-            this.btn701.Size = new System.Drawing.Size(93, 32);
-            this.btn701.TabIndex = 7;
-            this.btn701.Text = "701";
-            this.btn701.UseVisualStyleBackColor = true;
-            // 
-            // btn501
-            // 
-            this.btn501.Location = new System.Drawing.Point(446, 77);
-            this.btn501.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn501.Name = "btn501";
-            this.btn501.Size = new System.Drawing.Size(93, 32);
-            this.btn501.TabIndex = 8;
-            this.btn501.Text = "501";
-            this.btn501.UseVisualStyleBackColor = true;
             // 
             // btnStartMatch
             // 
@@ -154,54 +126,6 @@
             this.label3.Size = new System.Drawing.Size(166, 31);
             this.label3.TabIndex = 10;
             this.label3.Text = "Match Setup";
-            // 
-            // btn1leg
-            // 
-            this.btn1leg.Location = new System.Drawing.Point(349, 134);
-            this.btn1leg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn1leg.Name = "btn1leg";
-            this.btn1leg.Size = new System.Drawing.Size(93, 32);
-            this.btn1leg.TabIndex = 11;
-            this.btn1leg.Text = "1 leg";
-            this.btn1leg.UseVisualStyleBackColor = true;
-            // 
-            // btn3leg
-            // 
-            this.btn3leg.Location = new System.Drawing.Point(446, 134);
-            this.btn3leg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn3leg.Name = "btn3leg";
-            this.btn3leg.Size = new System.Drawing.Size(93, 32);
-            this.btn3leg.TabIndex = 12;
-            this.btn3leg.Text = "3 legs";
-            this.btn3leg.UseVisualStyleBackColor = true;
-            // 
-            // btn5leg
-            // 
-            this.btn5leg.Location = new System.Drawing.Point(543, 134);
-            this.btn5leg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn5leg.Name = "btn5leg";
-            this.btn5leg.Size = new System.Drawing.Size(93, 32);
-            this.btn5leg.TabIndex = 13;
-            this.btn5leg.Text = "5 legs";
-            this.btn5leg.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(463, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Start Score";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(472, 119);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Best Of";
             // 
             // txtPlayer1
             // 
@@ -243,33 +167,127 @@
             this.txtPlayer4.Text = "Player 4";
             this.txtPlayer4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rb701);
+            this.groupBox1.Controls.Add(this.rb501);
+            this.groupBox1.Controls.Add(this.rb301);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.groupBox1.Location = new System.Drawing.Point(349, 119);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(287, 72);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Start Score";
+            // 
+            // rb301
+            // 
+            this.rb301.AutoSize = true;
+            this.rb301.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.rb301.Location = new System.Drawing.Point(22, 24);
+            this.rb301.Name = "rb301";
+            this.rb301.Size = new System.Drawing.Size(70, 33);
+            this.rb301.TabIndex = 0;
+            this.rb301.Text = "301";
+            this.rb301.UseVisualStyleBackColor = true;
+            // 
+            // rb501
+            // 
+            this.rb501.AutoSize = true;
+            this.rb501.Checked = true;
+            this.rb501.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.rb501.Location = new System.Drawing.Point(112, 25);
+            this.rb501.Name = "rb501";
+            this.rb501.Size = new System.Drawing.Size(70, 33);
+            this.rb501.TabIndex = 1;
+            this.rb501.TabStop = true;
+            this.rb501.Text = "501";
+            this.rb501.UseVisualStyleBackColor = true;
+            // 
+            // rb701
+            // 
+            this.rb701.AutoSize = true;
+            this.rb701.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.rb701.Location = new System.Drawing.Point(197, 25);
+            this.rb701.Name = "rb701";
+            this.rb701.Size = new System.Drawing.Size(70, 33);
+            this.rb701.TabIndex = 2;
+            this.rb701.Text = "701";
+            this.rb701.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rb5leg);
+            this.groupBox2.Controls.Add(this.rb3leg);
+            this.groupBox2.Controls.Add(this.rb1leg);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.groupBox2.Location = new System.Drawing.Point(349, 201);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(287, 76);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Best Of";
+            // 
+            // rb5leg
+            // 
+            this.rb5leg.AutoSize = true;
+            this.rb5leg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.rb5leg.Location = new System.Drawing.Point(197, 29);
+            this.rb5leg.Name = "rb5leg";
+            this.rb5leg.Size = new System.Drawing.Size(84, 28);
+            this.rb5leg.TabIndex = 2;
+            this.rb5leg.Text = "5 Legs";
+            this.rb5leg.UseVisualStyleBackColor = true;
+            // 
+            // rb3leg
+            // 
+            this.rb3leg.AutoSize = true;
+            this.rb3leg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.rb3leg.Location = new System.Drawing.Point(107, 29);
+            this.rb3leg.Name = "rb3leg";
+            this.rb3leg.Size = new System.Drawing.Size(84, 28);
+            this.rb3leg.TabIndex = 1;
+            this.rb3leg.Text = "3 Legs";
+            this.rb3leg.UseVisualStyleBackColor = true;
+            // 
+            // rb1leg
+            // 
+            this.rb1leg.AutoSize = true;
+            this.rb1leg.Checked = true;
+            this.rb1leg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.rb1leg.Location = new System.Drawing.Point(22, 29);
+            this.rb1leg.Name = "rb1leg";
+            this.rb1leg.Size = new System.Drawing.Size(75, 28);
+            this.rb1leg.TabIndex = 0;
+            this.rb1leg.TabStop = true;
+            this.rb1leg.Text = "1 Leg";
+            this.rb1leg.UseVisualStyleBackColor = true;
+            // 
             // Match
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 375);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtPlayer4);
             this.Controls.Add(this.txtPlayer3);
             this.Controls.Add(this.txtPlayer2);
             this.Controls.Add(this.txtPlayer1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btn5leg);
-            this.Controls.Add(this.btn3leg);
-            this.Controls.Add(this.btn1leg);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnStartMatch);
-            this.Controls.Add(this.btn501);
-            this.Controls.Add(this.btn701);
             this.Controls.Add(this.playerUpDown);
-            this.Controls.Add(this.btn301);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.computerCheck);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Match";
             this.Text = "Match";
             ((System.ComponentModel.ISupportInitialize)(this.playerUpDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,20 +298,20 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox computerCheck;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn301;
         private System.Windows.Forms.NumericUpDown playerUpDown;
-        private System.Windows.Forms.Button btn701;
-        private System.Windows.Forms.Button btn501;
         private System.Windows.Forms.Button btnStartMatch;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn1leg;
-        private System.Windows.Forms.Button btn3leg;
-        private System.Windows.Forms.Button btn5leg;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPlayer1;
         private System.Windows.Forms.TextBox txtPlayer2;
         private System.Windows.Forms.TextBox txtPlayer3;
         private System.Windows.Forms.TextBox txtPlayer4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rb701;
+        private System.Windows.Forms.RadioButton rb501;
+        private System.Windows.Forms.RadioButton rb301;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rb5leg;
+        private System.Windows.Forms.RadioButton rb3leg;
+        private System.Windows.Forms.RadioButton rb1leg;
     }
 }

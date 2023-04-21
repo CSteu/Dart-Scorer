@@ -13,7 +13,6 @@ namespace DartScorer.Untitled
 		public string name;
 		public int score;
 		public int dartsThrown;
-		public int totPoints = 0;
 
 		public Player()
 		{
@@ -29,7 +28,6 @@ namespace DartScorer.Untitled
 		public void decrementScore(int lastTurn)
 		{
 			score -= lastTurn;
-			totPoints += lastTurn;
 		}
 
 		public int getScore()

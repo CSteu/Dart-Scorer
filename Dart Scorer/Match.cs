@@ -12,6 +12,8 @@ namespace Dart_Scorer
 {
     public partial class Match : Form
     {
+        string[] names = new string[4];
+        private int startScore;
         public Match()
         {
             InitializeComponent();
@@ -22,7 +24,9 @@ namespace Dart_Scorer
 
         private void btnStartMatch_Click(object sender, EventArgs e)
         {
-            Game form1 = new Game(501, (int)playerUpDown.Value);
+            readNames();
+            checkSettings();
+            Game form1 = new Game(startScore, (int)playerUpDown.Value, names, computerCheck.Checked, 5);
             form1.Show();
             this.Close();
         }
@@ -57,6 +61,31 @@ namespace Dart_Scorer
                 txtPlayer3.Show();
                 txtPlayer4.Show();
             }
+        }
+
+        public void readNames()
+        {
+            names[0] = txtPlayer1.Text;
+            names[1] = txtPlayer2.Text;
+            names[2] = txtPlayer3.Text;
+            names[3] = txtPlayer4.Text;
+        }
+
+        public void checkSettings()
+        {
+            if (rb301.Checked)
+            {
+                startScore = 301;
+            }
+            else if (rb501.Checked)
+            {
+                startScore = 501;
+            }
+            else
+            {
+                startScore = 701;
+            }
+
         }
     }
 }
