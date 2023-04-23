@@ -83,10 +83,15 @@ namespace Dart_Scorer
                 statsSheet.addScore(currScore, up);
             }
             player[up].incrementDarts(3);
+            computer.incrementDarts(3);
             statsSheet.addDarts(3, up);
+            statsSheet.addComputerDarts(3); 
             statsSheet.calculateAverage(up);
+            statsSheet.calculateComputerAverage();
 
-            txtCmp.Text += computer.calculateScore().ToString() + " ";
+            int computerScore = computer.calculateScore();
+            txtCurrScore.Text = computerScore.ToString();
+            statsSheet.addComputerScore(computerScore);
 
             updateGame();
             turn++;
@@ -102,9 +107,27 @@ namespace Dart_Scorer
         public void updateStats()
         {
             int up = turn % numPlayers;
-            txtStats.Text = player[up].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) 
-                + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) + Environment.NewLine + "Total Points Scored: "
-                + Environment.NewLine + statsSheet.totalPoints[up] + Environment.NewLine +"Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[up];
+            if(!computerGame)
+            {
+                txtStats.Text = player[up].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) 
+                    + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) + Environment.NewLine + "Total Points Scored: "
+                    + Environment.NewLine + statsSheet.totalPoints[up] + Environment.NewLine +"Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[up];
+            }
+            else
+            {
+                if(turn % 2 == 0)
+                {
+                    txtStats.Text = player[0].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[0], 2)
+                        + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[0], 2) + Environment.NewLine + "Total Points Scored: "
+                        + Environment.NewLine + statsSheet.totalPoints[0] + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[0];
+                }
+                else
+                {
+                    txtStats.Text = computer.name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.caverage, 2)
+                        + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.caverage, 2) + Environment.NewLine + "Total Points Scored: "
+                        + Environment.NewLine + statsSheet.ctotalPoints + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.ctotalDarts;
+                }
+            }
         }
 
         private void txtCurrScore_KeyDown(object sender, KeyEventArgs e)
@@ -122,6 +145,8 @@ namespace Dart_Scorer
                 player[i].score = startScore;
                 player[i].dartsThrown = 0;
             }
+            computer.score = startScore;
+            computer.dartsThrown = 0;
             turn = 0;
             updateGame();
         }

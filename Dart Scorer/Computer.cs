@@ -11,7 +11,7 @@ namespace DartScorer.Untitled
 		public string name = "Dartbot";
 		int skillLevel;
 		public int score;
-		int dartsThrown;
+		public int dartsThrown;
 		public int[] turns = new int[100];
 		private int currTurn = 0;
 
@@ -26,7 +26,18 @@ namespace DartScorer.Untitled
 		{
 			int currScore = turns[currTurn];
             currTurn++;
-			score -= currScore;
+			if(score < 160)
+			{
+				currScore /= 2;
+				score -= currScore;
+				if (score - currScore < 0)
+					score = 0;
+			}
+			else
+			{
+				score -= currScore;
+			}
+			
 			return currScore;
         }
 
@@ -55,9 +66,9 @@ namespace DartScorer.Untitled
 			score = 0;
 		}
 
-		public void incrementDarts()
+		public void incrementDarts(int num)
 		{
-			dartsThrown++;
+			dartsThrown += num;
 		}
 
 		public int getDarts()

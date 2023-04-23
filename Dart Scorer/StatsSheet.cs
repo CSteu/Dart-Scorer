@@ -37,7 +37,12 @@ namespace DartScorer.Untitled
 			average[playerNum] = (float)totalPoints[playerNum] / totalDarts[playerNum];
 		}
 
-		public void firstNineAverage()
+        public void calculateComputerAverage()
+        {
+            caverage = (float)ctotalPoints / ctotalDarts;
+        }
+
+        public void firstNineAverage()
 		{
 			throw new NotImplementedException();
 		}
@@ -50,6 +55,15 @@ namespace DartScorer.Untitled
         public void addDarts(int darts, int player)
         {
             totalDarts[player] += darts;
+        }
+
+		public void addComputerScore(int score)
+		{
+			ctotalPoints += score;
+		}
+        public void addComputerDarts(int darts)
+        {
+            ctotalDarts += darts;
         }
     }
 }

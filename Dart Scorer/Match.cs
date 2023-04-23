@@ -29,7 +29,7 @@ namespace Dart_Scorer
         {
             readNames();
             checkSettings();
-            Game form1 = new Game(startScore, (int)playerUpDown.Value, names, computerCheck.Checked, 5);
+            Game form1 = new Game(startScore, (int)playerUpDown.Value, names, computerCheck.Checked, (int)upDownSkillLevel.Value);
             form1.Show();
             this.Close();
         }
