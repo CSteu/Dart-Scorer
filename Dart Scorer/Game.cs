@@ -1,14 +1,7 @@
 ﻿using DartScorer.Untitled;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace Dart_Scorer
 {
@@ -16,21 +9,24 @@ namespace Dart_Scorer
     {
         public int startScore;
         public int numPlayers;
+        public int totPlayers;
         public string[] names;
+        public int firstTo;
         public int turn = 0;
         Player[] player;
         Computer computer;
         private bool computerGame;
-        
+
         StatsSheet statsSheet = new StatsSheet();
-        public Game(int score, int num, string[] n, bool comp, int compdif)
+        public Game(int score, int num, string[] n, bool comp, int compdif, int first)
         {
             InitializeComponent();
             startScore = score;
             numPlayers = num;
             computerGame = comp;
+            firstTo = first;
             player = new Player[numPlayers];
-            for(int i = 0; i < numPlayers; i++)
+            for (int i = 0; i < numPlayers; i++)
             {
                 player[i] = new Player(n[i], score);
             }
@@ -41,81 +37,184 @@ namespace Dart_Scorer
             gameSetup();
         }
 
-        
+
 
         public void gameSetup()
-        { 
+        {
             txtCurrPlayer.Text = player[0].name;
             txtScore.Text = player[0].getScore().ToString();
-            txtPlayerList.Clear();
+            txtNextPlayer.Hide();
+            btnContinue.Hide();
+            labelWinner.Hide();
+            int x = (firstTo * 2) - 1;
+            txtLegs.Text = "Best of " + x + " Legs";
+            totPlayers = numPlayers;
+            if (computerGame)
+            {
+                totPlayers = 2;
+            }
+
+            if (numPlayers >= 1)
+            {
+                panelPlayer1.Show();
+            }
+            if (numPlayers >= 2)
+            {
+                panelPlayer2.Show();
+            }
+            else
+            {
+                panelPlayer2.Hide();
+            }
+            if (numPlayers >= 3)
+            {
+                panelPlayer3.Show();
+            }
+            else
+            {
+                panelPlayer3.Hide();
+            }
+            if (numPlayers >= 4)
+            {
+                panelPlayer4.Show();
+            }
+            else
+            {
+                panelPlayer4.Hide();
+            }
+            if (computerGame)
+            {
+                panelComputer.Show();
+                panelPlayer2.Show();
+            }
+            else
+            {
+                panelComputer.Hide();
+            }
             updateGame();
+            updateStats(0);
         }
 
-        public void updateGame()
+        public async void updateGame()
         {
-            int upnext = (turn + 1) % numPlayers;
-            txtCurrPlayer.Text = player[upnext].name;
-            txtScore.Text = player[upnext].getScore().ToString();
-            txtPlayerList.Clear();
-            for (int i = 0; i < numPlayers; i++)
+            if (computerGame && turn > 0)
             {
-                txtPlayerList.Text += player[i].name + ": " + player[i].getScore() + Environment.NewLine;
-                txtPlayerList.Text += "Average: " + (float)Math.Round(statsSheet.average[i], 2) + Environment.NewLine + Environment.NewLine;
+                computer.incrementDarts(3);
+                statsSheet.addDarts(3, 4);
+                int computerScore = computer.calculateScore();
+                statsSheet.addScore(computerScore, 4);
+                statsSheet.calculateAverage(4);
+                txtCurrScore.Text = computerScore.ToString();
+                turn++;
+                if (computer.score == 0)
+                {
+                    computer.incrementLegs();
+                    restartGame();
+                }
             }
-            if(computerGame)
+            if (!computerGame)
             {
-                txtPlayerList.Text += computer.name + ": " + computer.getScore() + Environment.NewLine;
-                txtPlayerList.Text += "Average: " + (float)Math.Round(statsSheet.caverage, 2) + Environment.NewLine + Environment.NewLine;
+                int upnext = (turn) % totPlayers;
+                txtCurrPlayer.Text = player[upnext].name;
+                txtScore.Text = player[upnext].getScore().ToString();
+
+                if (turn != 0 && !computerGame)
+                {
+                    txtNextPlayer.Show();
+                    txtNextPlayer.Text = player[upnext].name + " UP NEXT";
+                    await Task.Delay(2000);
+                    txtNextPlayer.Hide();
+                }
+            }
+
+            if (numPlayers >= 1)
+            {
+                txtPlayer1.Text = player[0].name + ": " + player[0].getScore() + Environment.NewLine +
+                    "Average: " + (float)Math.Round(statsSheet.average[0], 2);
+                txtPlayer1Score.Text = player[0].legs.ToString();
+            }
+            if (numPlayers >= 2)
+            {
+                txtPlayer2.Text = player[1].name + ": " + player[1].getScore() + Environment.NewLine +
+                    "Average: " + (float)Math.Round(statsSheet.average[1], 2);
+                txtPlayer2Score.Text = player[1].legs.ToString();
+            }
+            if (numPlayers >= 3)
+            {
+                txtPlayer3.Text = player[2].name + ": " + player[2].getScore() + Environment.NewLine +
+                    "Average: " + (float)Math.Round(statsSheet.average[2], 2);
+                txtPlayer3Score.Text = player[2].legs.ToString();
+            }
+            if (numPlayers >= 4)
+            {
+                txtPlayer4.Text = player[3].name + ": " + player[3].getScore() + Environment.NewLine +
+                    "Average: " + (float)Math.Round(statsSheet.average[3], 2);
+                txtPlayer4Score.Text = player[3].legs.ToString();
+            }
+            if (computerGame)
+            {
+                txtComputer.Text = computer.name + ": " + computer.getScore() + Environment.NewLine
+                        + "Average: " + (float)Math.Round(statsSheet.average[4], 2);
+                txtComputerScore.Text = computer.legs.ToString();
             }
         }
 
         private void btnEnterScore_Click(object sender, EventArgs e)
         {
             int currScore = int.Parse(txtCurrScore.Text);
+            int up = turn % totPlayers;
 
             if (currScore < 0 || currScore > 180)
                 return;
-
-            int up = turn % numPlayers;
-            if (player[up].score - currScore >= 0)
+            if (computerGame)
             {
-                player[up].decrementScore(currScore);
-                statsSheet.addScore(currScore, up);
-            }
-            player[up].incrementDarts(3);
-            computer.incrementDarts(3);
-            statsSheet.addDarts(3, up);
-            statsSheet.addComputerDarts(3); 
-            statsSheet.calculateAverage(up);
-            statsSheet.calculateComputerAverage();
-
-            int computerScore = computer.calculateScore();
-            txtCurrScore.Text = computerScore.ToString();
-            statsSheet.addComputerScore(computerScore);
-
-            updateGame();
-            turn++;
-            updateStats();
-            txtLastScore.Text = "Last Score: " + txtCurrScore.Text;
-            txtCurrScore.Clear();
-            if (player[up].score == 0)
-            {
-                restartGame();
-            }
-        }
-
-        public void updateStats()
-        {
-            int up = turn % numPlayers;
-            if(!computerGame)
-            {
-                txtStats.Text = player[up].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) 
-                    + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) + Environment.NewLine + "Total Points Scored: "
-                    + Environment.NewLine + statsSheet.totalPoints[up] + Environment.NewLine +"Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[up];
+                player[0].decrementScore(currScore);
+                statsSheet.addScore(currScore, 0);
+                player[0].incrementDarts(3);
+                statsSheet.addDarts(3, 0);
+                statsSheet.calculateAverage(0);
+                if (player[0].score == 0)
+                {
+                    player[0].incrementLegs();
+                    restartGame();
+                }
             }
             else
             {
-                if(turn % 2 == 0)
+                if (player[up].score - currScore >= 0)
+                {
+                    player[up].decrementScore(currScore);
+                    statsSheet.addScore(currScore, up);
+                }
+                player[up].incrementDarts(3);
+                statsSheet.addDarts(3, up);
+                statsSheet.calculateAverage(up);
+                if (player[up].score == 0)
+                {
+                    player[up].incrementLegs();
+                    restartGame();
+                }
+            }
+
+            turn++;
+            updateGame();
+            txtLastScore.Text = "Last Score: " + txtCurrScore.Text;
+            txtCurrScore.Clear();
+
+        }
+
+        public async void updateStats(int x)
+        {
+            int up = x % numPlayers;
+            if (!computerGame)
+            {
+                txtStats.Text = player[up].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2)
+                    + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) + Environment.NewLine + "Total Points Scored: "
+                    + Environment.NewLine + statsSheet.totalPoints[up] + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[up];
+            }
+            else
+            {
+                if (x % 2 == 0)
                 {
                     txtStats.Text = player[0].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[0], 2)
                         + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[0], 2) + Environment.NewLine + "Total Points Scored: "
@@ -123,16 +222,19 @@ namespace Dart_Scorer
                 }
                 else
                 {
-                    txtStats.Text = computer.name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.caverage, 2)
-                        + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.caverage, 2) + Environment.NewLine + "Total Points Scored: "
-                        + Environment.NewLine + statsSheet.ctotalPoints + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.ctotalDarts;
+                    txtStats.Text = computer.name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[4], 2)
+                        + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[4], 2) + Environment.NewLine + "Total Points Scored: "
+                        + Environment.NewLine + statsSheet.totalPoints[4] + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[4];
                 }
             }
+            await Task.Delay(5000);
+            x++;
+            updateStats(x);
         }
 
         private void txtCurrScore_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 btnEnterScore.PerformClick();
             }
@@ -140,10 +242,38 @@ namespace Dart_Scorer
 
         private void restartGame()
         {
+
             for (int i = 0; i < numPlayers; i++)
             {
                 player[i].score = startScore;
                 player[i].dartsThrown = 0;
+            }
+            if (computerGame)
+            {
+                if (computer.legs == firstTo)
+                {
+                    labelWinner.Show();
+                    btnContinue.Show();
+                    labelWinner.Text = computer.name + " Wins!" + Environment.NewLine +
+                        player[0].legs + " - " + computer.legs; ;
+                }
+                else if (player[0].legs == firstTo)
+                {
+                    labelWinner.Show();
+                    btnContinue.Show();
+                    labelWinner.Text = player[0].name + " Wins!" + Environment.NewLine +
+                        player[0].legs + " - " + computer.legs;
+                }
+            }
+            else
+            {
+                int up = turn % totPlayers;
+                if (player[up].score == firstTo)
+                {
+                    labelWinner.Show();
+                    btnContinue.Show();
+                    labelWinner.Text = player[up].name + " Wins!";
+                }
             }
             computer.score = startScore;
             computer.dartsThrown = 0;
@@ -154,6 +284,38 @@ namespace Dart_Scorer
         private void btnRestart_Click(object sender, EventArgs e)
         {
             restartGame();
+        }
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pbComputer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtComputer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtComputerScore_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnContinue_Click_1(object sender, EventArgs e)
+        {
+            Match form1 = new Match();
+            form1.Show();
+            this.Close();
         }
     }
 }

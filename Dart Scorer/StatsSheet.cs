@@ -8,26 +8,18 @@ namespace DartScorer.Untitled
 {
 	public class StatsSheet
 	{
-		public float[] average = new float[4];
-        public float[] firstNine = new float[4];
-		public int[] totalPoints = new int[4];
-		public int[] totalDarts = new int[4];
-
-		public float caverage;
-		public float cfirstNine;
-		public int ctotalPoints;
-        public int ctotalDarts;
-
+		public float[] average = new float[5];
+        public float[] firstNine = new float[5];
+		public int[] totalPoints = new int[5];
+		public int[] totalDarts = new int[5];
 
         public StatsSheet()
 		{
-			for(int k = 0; k < 4; k++)
+			for(int k = 0; k < 5; k++)
 			{
 				totalPoints[k] = 0;
 				totalDarts[k] = 0;
 			}
-			ctotalDarts = 0;
-			ctotalPoints = 0;
 		}
 
 
@@ -36,11 +28,6 @@ namespace DartScorer.Untitled
 		{
 			average[playerNum] = (float)totalPoints[playerNum] / totalDarts[playerNum];
 		}
-
-        public void calculateComputerAverage()
-        {
-            caverage = (float)ctotalPoints / ctotalDarts;
-        }
 
         public void firstNineAverage()
 		{
@@ -55,15 +42,6 @@ namespace DartScorer.Untitled
         public void addDarts(int darts, int player)
         {
             totalDarts[player] += darts;
-        }
-
-		public void addComputerScore(int score)
-		{
-			ctotalPoints += score;
-		}
-        public void addComputerDarts(int darts)
-        {
-            ctotalDarts += darts;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace DartScorer.Untitled
 		public string name;
 		public int score;
 		public int dartsThrown;
+		public int legs = 0;
 
 		public Player()
 		{
@@ -38,6 +39,11 @@ namespace DartScorer.Untitled
 		public void resetScore()
 		{
 			score = 0;
+		}
+
+		public void incrementLegs()
+		{
+			legs++;
 		}
 
 		public void incrementDarts(int darts)

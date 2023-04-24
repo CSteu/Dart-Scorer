@@ -14,6 +14,7 @@ namespace DartScorer.Untitled
 		public int dartsThrown;
 		public int[] turns = new int[100];
 		private int currTurn = 0;
+		public int legs = 0;
 
 		public Computer(int dif, int scr)
 		{
@@ -71,7 +72,12 @@ namespace DartScorer.Untitled
 			dartsThrown += num;
 		}
 
-		public int getDarts()
+        public void incrementLegs()
+        {
+            legs++;
+        }
+
+        public int getDarts()
 		{
 			return dartsThrown;
 		}
