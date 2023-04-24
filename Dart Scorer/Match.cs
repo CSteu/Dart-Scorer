@@ -176,5 +176,10 @@ namespace Dart_Scorer
             panelMatchScreen.Show();
             panelStatsScreen.Show();
         }
+
+        private void dartbotLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

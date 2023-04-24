@@ -238,8 +238,8 @@
             // 
             // panelMatchScreen
             // 
-            this.panelMatchScreen.Controls.Add(this.upDownSkillLevel);
             this.panelMatchScreen.Controls.Add(this.dartbotLabel);
+            this.panelMatchScreen.Controls.Add(this.upDownSkillLevel);
             this.panelMatchScreen.Controls.Add(this.txtDartbot);
             this.panelMatchScreen.Controls.Add(this.groupBox2);
             this.panelMatchScreen.Controls.Add(this.groupBox1);
@@ -292,6 +292,9 @@
             // 
             // playerUpDown
             // 
+            this.playerUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.playerUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.playerUpDown.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.playerUpDown.Location = new System.Drawing.Point(151, 61);
             this.playerUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.playerUpDown.Maximum = new decimal(new int[] {
@@ -305,7 +308,7 @@
             0,
             0});
             this.playerUpDown.Name = "playerUpDown";
-            this.playerUpDown.Size = new System.Drawing.Size(43, 20);
+            this.playerUpDown.Size = new System.Drawing.Size(43, 16);
             this.playerUpDown.TabIndex = 6;
             this.playerUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.playerUpDown.Value = new decimal(new int[] {
@@ -317,19 +320,23 @@
             // 
             // btnStartMatch
             // 
-            this.btnStartMatch.Location = new System.Drawing.Point(56, 264);
+            this.btnStartMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(128)))), ((int)(((byte)(147)))));
+            this.btnStartMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartMatch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartMatch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnStartMatch.Location = new System.Drawing.Point(56, 250);
             this.btnStartMatch.Name = "btnStartMatch";
-            this.btnStartMatch.Size = new System.Drawing.Size(575, 23);
+            this.btnStartMatch.Size = new System.Drawing.Size(575, 40);
             this.btnStartMatch.TabIndex = 9;
             this.btnStartMatch.Text = "START GAME";
-            this.btnStartMatch.UseVisualStyleBackColor = true;
+            this.btnStartMatch.UseVisualStyleBackColor = false;
             this.btnStartMatch.Click += new System.EventHandler(this.btnStartMatch_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label3.Location = new System.Drawing.Point(222, 0);
+            this.label3.Location = new System.Drawing.Point(259, 6);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 31);
@@ -338,50 +345,64 @@
             // 
             // txtPlayer1
             // 
-            this.txtPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtPlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.txtPlayer1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlayer1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtPlayer1.Location = new System.Drawing.Point(56, 86);
             this.txtPlayer1.Name = "txtPlayer1";
-            this.txtPlayer1.Size = new System.Drawing.Size(244, 35);
+            this.txtPlayer1.Size = new System.Drawing.Size(244, 32);
             this.txtPlayer1.TabIndex = 16;
             this.txtPlayer1.Text = "Player 1";
             this.txtPlayer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPlayer2
             // 
-            this.txtPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txtPlayer2.Location = new System.Drawing.Point(56, 127);
+            this.txtPlayer2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.txtPlayer2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlayer2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayer2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtPlayer2.Location = new System.Drawing.Point(57, 126);
             this.txtPlayer2.Name = "txtPlayer2";
-            this.txtPlayer2.Size = new System.Drawing.Size(244, 35);
+            this.txtPlayer2.Size = new System.Drawing.Size(244, 32);
             this.txtPlayer2.TabIndex = 17;
             this.txtPlayer2.Text = "Player 2";
             this.txtPlayer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPlayer3
             // 
-            this.txtPlayer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtPlayer3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.txtPlayer3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlayer3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayer3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtPlayer3.Location = new System.Drawing.Point(56, 168);
             this.txtPlayer3.Name = "txtPlayer3";
-            this.txtPlayer3.Size = new System.Drawing.Size(244, 35);
+            this.txtPlayer3.Size = new System.Drawing.Size(244, 32);
             this.txtPlayer3.TabIndex = 18;
             this.txtPlayer3.Text = "Player 3";
             this.txtPlayer3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPlayer4
             // 
-            this.txtPlayer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtPlayer4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.txtPlayer4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlayer4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayer4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtPlayer4.Location = new System.Drawing.Point(56, 209);
             this.txtPlayer4.Name = "txtPlayer4";
-            this.txtPlayer4.Size = new System.Drawing.Size(244, 35);
+            this.txtPlayer4.Size = new System.Drawing.Size(244, 32);
             this.txtPlayer4.TabIndex = 19;
             this.txtPlayer4.Text = "Player 4";
             this.txtPlayer4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
             this.groupBox1.Controls.Add(this.rb701);
             this.groupBox1.Controls.Add(this.rb501);
             this.groupBox1.Controls.Add(this.rb301);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(344, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(287, 72);
@@ -426,10 +447,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
             this.groupBox2.Controls.Add(this.rb5leg);
             this.groupBox2.Controls.Add(this.rb3leg);
             this.groupBox2.Controls.Add(this.rb1leg);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(344, 168);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(287, 76);
@@ -474,10 +497,13 @@
             // 
             // txtDartbot
             // 
-            this.txtDartbot.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtDartbot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.txtDartbot.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDartbot.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDartbot.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtDartbot.Location = new System.Drawing.Point(57, 127);
             this.txtDartbot.Name = "txtDartbot";
-            this.txtDartbot.Size = new System.Drawing.Size(197, 35);
+            this.txtDartbot.Size = new System.Drawing.Size(243, 32);
             this.txtDartbot.TabIndex = 22;
             this.txtDartbot.Text = "Dartbot";
             this.txtDartbot.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -485,16 +511,23 @@
             // dartbotLabel
             // 
             this.dartbotLabel.AutoSize = true;
-            this.dartbotLabel.Location = new System.Drawing.Point(254, 127);
+            this.dartbotLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.dartbotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
+            this.dartbotLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dartbotLabel.Location = new System.Drawing.Point(148, 47);
             this.dartbotLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dartbotLabel.Name = "dartbotLabel";
-            this.dartbotLabel.Size = new System.Drawing.Size(50, 13);
+            this.dartbotLabel.Size = new System.Drawing.Size(45, 12);
             this.dartbotLabel.TabIndex = 24;
             this.dartbotLabel.Text = "Difficulty:";
+            this.dartbotLabel.Click += new System.EventHandler(this.dartbotLabel_Click);
             // 
             // upDownSkillLevel
             // 
-            this.upDownSkillLevel.Location = new System.Drawing.Point(257, 141);
+            this.upDownSkillLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.upDownSkillLevel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.upDownSkillLevel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.upDownSkillLevel.Location = new System.Drawing.Point(150, 61);
             this.upDownSkillLevel.Margin = new System.Windows.Forms.Padding(2);
             this.upDownSkillLevel.Maximum = new decimal(new int[] {
             5,
@@ -507,7 +540,7 @@
             0,
             0});
             this.upDownSkillLevel.Name = "upDownSkillLevel";
-            this.upDownSkillLevel.Size = new System.Drawing.Size(43, 20);
+            this.upDownSkillLevel.Size = new System.Drawing.Size(43, 16);
             this.upDownSkillLevel.TabIndex = 23;
             this.upDownSkillLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.upDownSkillLevel.Value = new decimal(new int[] {
@@ -520,7 +553,7 @@
             // 
             this.panelHomeScreen.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelHomeScreen.Controls.Add(this.label5);
-            this.panelHomeScreen.Location = new System.Drawing.Point(57, 32);
+            this.panelHomeScreen.Location = new System.Drawing.Point(118, 372);
             this.panelHomeScreen.Name = "panelHomeScreen";
             this.panelHomeScreen.Size = new System.Drawing.Size(670, 303);
             this.panelHomeScreen.TabIndex = 34;
@@ -538,7 +571,7 @@
             // 
             this.panelStatsScreen.BackColor = System.Drawing.SystemColors.Control;
             this.panelStatsScreen.Controls.Add(this.label6);
-            this.panelStatsScreen.Location = new System.Drawing.Point(57, 32);
+            this.panelStatsScreen.Location = new System.Drawing.Point(477, 375);
             this.panelStatsScreen.Name = "panelStatsScreen";
             this.panelStatsScreen.Size = new System.Drawing.Size(670, 303);
             this.panelStatsScreen.TabIndex = 35;
@@ -556,10 +589,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 375);
+            this.ClientSize = new System.Drawing.Size(1103, 553);
+            this.Controls.Add(this.panelHomeScreen);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panelStatsScreen);
-            this.Controls.Add(this.panelHomeScreen);
             this.Controls.Add(this.panelMatchScreen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);

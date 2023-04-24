@@ -105,6 +105,7 @@ namespace Dart_Scorer
                 statsSheet.addScore(computerScore, 4);
                 statsSheet.calculateAverage(4);
                 txtCurrScore.Text = computerScore.ToString();
+                txtScore.Text = player[0].getScore().ToString();
                 turn++;
                 if (computer.score == 0)
                 {
@@ -264,36 +265,28 @@ namespace Dart_Scorer
                     labelWinner.Text = player[0].name + " Wins!" + Environment.NewLine +
                         player[0].legs + " - " + computer.legs;
                 }
+                computer.score = startScore;
+                computer.dartsThrown = 0;
             }
             else
             {
                 int up = turn % totPlayers;
-                if (player[up].score == firstTo)
+                if (player[up].legs == firstTo)
                 {
                     labelWinner.Show();
                     btnContinue.Show();
                     labelWinner.Text = player[up].name + " Wins!";
                 }
             }
-            computer.score = startScore;
-            computer.dartsThrown = 0;
+            
             turn = 0;
+            txtScore.Text = startScore.ToString();
             updateGame();
-        }
-
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
-            restartGame();
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void pbComputer_Click(object sender, EventArgs e)

@@ -505,7 +505,7 @@
             this.labelWinner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.labelWinner.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWinner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.labelWinner.Location = new System.Drawing.Point(171, 29);
+            this.labelWinner.Location = new System.Drawing.Point(180, 23);
             this.labelWinner.Multiline = true;
             this.labelWinner.Name = "labelWinner";
             this.labelWinner.Size = new System.Drawing.Size(439, 221);
