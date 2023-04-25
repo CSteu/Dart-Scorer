@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
+using DartScorer.Untitled;
 
 namespace Dart_Scorer
 {
     public partial class Match : Form
     {
         string[] names = new string[4];
+        User user1 = new User();
         private int startScore;
         private int bestOf;
-        public Match()
+        private string user;
+        public Match(string user)
         {
             InitializeComponent();
             panelHomeScreen.Hide();
@@ -17,15 +20,23 @@ namespace Dart_Scorer
             txtPlayer3.Hide();
             txtPlayer4.Hide();
             txtDartbot.Hide();
+            this.user = user;
+            setUser();
             dartbotLabel.Visible = false;
             upDownSkillLevel.Visible = false;
+        }
+
+        private void setUser()
+        {
+            user1 = user1.getStats(user);
+            txtPlayer1.Text = user1.nickname;
         }
 
         private void btnStartMatch_Click(object sender, EventArgs e)
         {
             readNames();
             checkSettings();
-            Game form1 = new Game(startScore, (int)playerUpDown.Value, names, computerCheck.Checked, (int)upDownSkillLevel.Value, bestOf);
+            Game form1 = new Game(startScore, (int)playerUpDown.Value, names, computerCheck.Checked, (int)upDownSkillLevel.Value, bestOf, user);
             form1.Show();
             this.Close();
         }
@@ -175,11 +186,33 @@ namespace Dart_Scorer
             panelHomeScreen.Show();
             panelMatchScreen.Show();
             panelStatsScreen.Show();
+            updateStatsScreen();
+        }
+
+        private void updateStatsScreen()
+        {
+            txtStats.Clear();
+            decimal average;
+            if (user1.totDarts == 0)
+                average = 0;
+            else
+                average = (decimal)user1.totPoints / user1.totDarts;
+            labelStatsScreen.Text = user1.nickname + "'s Stats " + Environment.NewLine;
+            txtStats.Text += "PPR: " + Math.Round(average, 2) * 3 + Environment.NewLine;
+            txtStats.Text += "PPD: " + Math.Round(average, 2) + Environment.NewLine;
+            txtStats.Text += "Total Points: " + user1.totPoints + Environment.NewLine;
+            txtStats.Text += "Total Darts: " + user1.totDarts + Environment.NewLine;
+            txtStats.Text += "Matches Played: " + user1.matchesPlayed + Environment.NewLine;
         }
 
         private void dartbotLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

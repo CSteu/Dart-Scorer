@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Dart_Scorer
 {
@@ -12,19 +13,21 @@ namespace Dart_Scorer
         public int totPlayers;
         public string[] names;
         public int firstTo;
+        private string user;
         public int turn = 0;
         Player[] player;
         Computer computer;
         private bool computerGame;
 
         StatsSheet statsSheet = new StatsSheet();
-        public Game(int score, int num, string[] n, bool comp, int compdif, int first)
+        public Game(int score, int num, string[] n, bool comp, int compdif, int first, string user)
         {
             InitializeComponent();
             startScore = score;
             numPlayers = num;
             computerGame = comp;
             firstTo = first;
+            this.user = user;
             player = new Player[numPlayers];
             for (int i = 0; i < numPlayers; i++)
             {
@@ -257,6 +260,7 @@ namespace Dart_Scorer
                     btnContinue.Show();
                     labelWinner.Text = computer.name + " Wins!" + Environment.NewLine +
                         player[0].legs + " - " + computer.legs; ;
+                    updateUserStats();
                 }
                 else if (player[0].legs == firstTo)
                 {
@@ -264,6 +268,7 @@ namespace Dart_Scorer
                     btnContinue.Show();
                     labelWinner.Text = player[0].name + " Wins!" + Environment.NewLine +
                         player[0].legs + " - " + computer.legs;
+                    updateUserStats();
                 }
                 computer.score = startScore;
                 computer.dartsThrown = 0;
@@ -276,6 +281,7 @@ namespace Dart_Scorer
                     labelWinner.Show();
                     btnContinue.Show();
                     labelWinner.Text = player[up].name + " Wins!";
+                    updateUserStats();
                 }
             }
             
@@ -306,9 +312,19 @@ namespace Dart_Scorer
 
         private void btnContinue_Click_1(object sender, EventArgs e)
         {
-            Match form1 = new Match();
+            Match form1 = new Match(user);
             form1.Show();
             this.Close();
+        }
+
+        private void updateUserStats()
+        {
+            User user1 = new User();
+            user1 = user1.getStats(user);
+            int totPoints = user1.totPoints + statsSheet.totalPoints[0];
+            int totDarts = user1.totDarts += statsSheet.totalDarts[0];
+            int totMatches = user1.matchesPlayed + 1;
+            user1.updateStats(user, totPoints, totDarts, totMatches);
         }
     }
 }

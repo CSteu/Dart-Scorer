@@ -1,6 +1,8 @@
-﻿using System;
+﻿using DartScorer.Untitled;
+using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Dart_Scorer
 {
@@ -14,17 +16,8 @@ namespace Dart_Scorer
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader(@"db.txt");
-            string olddata = sr.ReadLine();
-            sr.Close();
-            string[] data = new string[3];
-            data[0] = txtUsername.Text;
-            data[1] = txtPassword.Text;
-            data[2] = txtNickname.Text;
-            StreamWriter sw = new StreamWriter(@"db.txt");
-
-            sw.Write(olddata + (Environment.NewLine) + "user=" + data[0] + ",pass=" + data[1] + ",nick=" + data[2]);
-
+            User user = new User(txtUsername.Text, txtPassword.Text, txtNickname.Text, 0, 0, 0);
+            user.writeData();
 
             Login form1 = new Login();
             form1.Show();

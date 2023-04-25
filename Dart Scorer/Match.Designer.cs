@@ -35,11 +35,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btnStats = new System.Windows.Forms.Button();
-            this.btnMatch = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.menuButton = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panelMatchScreen = new System.Windows.Forms.Panel();
@@ -65,16 +60,23 @@
             this.dartbotLabel = new System.Windows.Forms.Label();
             this.upDownSkillLevel = new System.Windows.Forms.NumericUpDown();
             this.panelHomeScreen = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelStatsScreen = new System.Windows.Forms.Panel();
+            this.txtStats = new System.Windows.Forms.TextBox();
+            this.labelStatsScreen = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.btnMatch = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.menuButton = new System.Windows.Forms.PictureBox();
             this.sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.panelMatchScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -82,11 +84,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.upDownSkillLevel)).BeginInit();
             this.panelHomeScreen.SuspendLayout();
             this.panelStatsScreen.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel6);
             this.sidebar.Controls.Add(this.panel7);
             this.sidebar.Controls.Add(this.panel5);
@@ -141,85 +146,6 @@
             this.panel7.Size = new System.Drawing.Size(200, 40);
             this.panel7.TabIndex = 28;
             // 
-            // btnStats
-            // 
-            this.btnStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStats.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnStats.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnStats.Image = global::Dart_Scorer.Properties.Resources.icons8_graph_32;
-            this.btnStats.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStats.Location = new System.Drawing.Point(-6, -9);
-            this.btnStats.Name = "btnStats";
-            this.btnStats.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnStats.Size = new System.Drawing.Size(164, 58);
-            this.btnStats.TabIndex = 27;
-            this.btnStats.Text = "           Statistics";
-            this.btnStats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStats.UseVisualStyleBackColor = true;
-            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
-            // 
-            // btnMatch
-            // 
-            this.btnMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMatch.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnMatch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMatch.Image = global::Dart_Scorer.Properties.Resources.icons8_battle_32;
-            this.btnMatch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMatch.Location = new System.Drawing.Point(-6, -9);
-            this.btnMatch.Name = "btnMatch";
-            this.btnMatch.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMatch.Size = new System.Drawing.Size(164, 58);
-            this.btnMatch.TabIndex = 27;
-            this.btnMatch.Text = "           Match";
-            this.btnMatch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMatch.UseVisualStyleBackColor = true;
-            this.btnMatch.Click += new System.EventHandler(this.btnMatch_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Image = global::Dart_Scorer.Properties.Resources.icons8_home_32__1_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-6, -9);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(213, 58);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "           Home";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnHome
-            // 
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHome.Image = global::Dart_Scorer.Properties.Resources.icons8_home_32__1_;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(-6, -9);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(164, 58);
-            this.btnHome.TabIndex = 27;
-            this.btnHome.Text = "           Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // menuButton
-            // 
-            this.menuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuButton.Image = global::Dart_Scorer.Properties.Resources.icons8_menu_32;
-            this.menuButton.Location = new System.Drawing.Point(7, 32);
-            this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(38, 37);
-            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.menuButton.TabIndex = 0;
-            this.menuButton.TabStop = false;
-            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -238,6 +164,7 @@
             // 
             // panelMatchScreen
             // 
+            this.panelMatchScreen.Controls.Add(this.panelHomeScreen);
             this.panelMatchScreen.Controls.Add(this.dartbotLabel);
             this.panelMatchScreen.Controls.Add(this.upDownSkillLevel);
             this.panelMatchScreen.Controls.Add(this.txtDartbot);
@@ -552,47 +479,168 @@
             // panelHomeScreen
             // 
             this.panelHomeScreen.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelHomeScreen.Controls.Add(this.label5);
-            this.panelHomeScreen.Location = new System.Drawing.Point(118, 372);
+            this.panelHomeScreen.Controls.Add(this.panelStatsScreen);
+            this.panelHomeScreen.Controls.Add(this.label6);
+            this.panelHomeScreen.Location = new System.Drawing.Point(0, 0);
             this.panelHomeScreen.Name = "panelHomeScreen";
             this.panelHomeScreen.Size = new System.Drawing.Size(670, 303);
             this.panelHomeScreen.TabIndex = 34;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Home Screen";
-            // 
             // panelStatsScreen
             // 
             this.panelStatsScreen.BackColor = System.Drawing.SystemColors.Control;
-            this.panelStatsScreen.Controls.Add(this.label6);
-            this.panelStatsScreen.Location = new System.Drawing.Point(477, 375);
+            this.panelStatsScreen.Controls.Add(this.labelStatsScreen);
+            this.panelStatsScreen.Controls.Add(this.txtStats);
+            this.panelStatsScreen.Location = new System.Drawing.Point(0, 0);
             this.panelStatsScreen.Name = "panelStatsScreen";
             this.panelStatsScreen.Size = new System.Drawing.Size(670, 303);
             this.panelStatsScreen.TabIndex = 35;
             // 
+            // txtStats
+            // 
+            this.txtStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.txtStats.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStats.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.txtStats.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtStats.Location = new System.Drawing.Point(77, 59);
+            this.txtStats.Multiline = true;
+            this.txtStats.Name = "txtStats";
+            this.txtStats.Size = new System.Drawing.Size(534, 237);
+            this.txtStats.TabIndex = 1;
+            this.txtStats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelStatsScreen
+            // 
+            this.labelStatsScreen.AutoSize = true;
+            this.labelStatsScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.labelStatsScreen.Location = new System.Drawing.Point(271, 3);
+            this.labelStatsScreen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelStatsScreen.Name = "labelStatsScreen";
+            this.labelStatsScreen.Size = new System.Drawing.Size(170, 31);
+            this.labelStatsScreen.TabIndex = 25;
+            this.labelStatsScreen.Text = "Stats Screen";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(74, 43);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label6.Location = new System.Drawing.Point(201, 43);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Stats Screen";
+            this.label6.Size = new System.Drawing.Size(179, 31);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Home Screen";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Location = new System.Drawing.Point(0, 328);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 40);
+            this.panel1.TabIndex = 28;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogout.Image = global::Dart_Scorer.Properties.Resources.icons8_logout_32;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(-6, -9);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(164, 58);
+            this.btnLogout.TabIndex = 27;
+            this.btnLogout.Text = "           Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnStats
+            // 
+            this.btnStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStats.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnStats.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnStats.Image = global::Dart_Scorer.Properties.Resources.icons8_graph_32;
+            this.btnStats.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStats.Location = new System.Drawing.Point(-6, -9);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnStats.Size = new System.Drawing.Size(164, 58);
+            this.btnStats.TabIndex = 27;
+            this.btnStats.Text = "           Statistics";
+            this.btnStats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            // 
+            // btnMatch
+            // 
+            this.btnMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatch.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnMatch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMatch.Image = global::Dart_Scorer.Properties.Resources.icons8_battle_32;
+            this.btnMatch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMatch.Location = new System.Drawing.Point(-6, -9);
+            this.btnMatch.Name = "btnMatch";
+            this.btnMatch.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnMatch.Size = new System.Drawing.Size(164, 58);
+            this.btnMatch.TabIndex = 27;
+            this.btnMatch.Text = "           Match";
+            this.btnMatch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMatch.UseVisualStyleBackColor = true;
+            this.btnMatch.Click += new System.EventHandler(this.btnMatch_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Image = global::Dart_Scorer.Properties.Resources.icons8_home_32__1_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(-6, -9);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(213, 58);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "           Home";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnHome
+            // 
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHome.Image = global::Dart_Scorer.Properties.Resources.icons8_home_32__1_;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(-6, -9);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(164, 58);
+            this.btnHome.TabIndex = 27;
+            this.btnHome.Text = "           Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // menuButton
+            // 
+            this.menuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuButton.Image = global::Dart_Scorer.Properties.Resources.icons8_menu_32;
+            this.menuButton.Location = new System.Drawing.Point(7, 32);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(38, 37);
+            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.menuButton.TabIndex = 0;
+            this.menuButton.TabStop = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
             // Match
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 553);
-            this.Controls.Add(this.panelHomeScreen);
+            this.ClientSize = new System.Drawing.Size(794, 370);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.panelStatsScreen);
             this.Controls.Add(this.panelMatchScreen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -607,7 +655,6 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.panelMatchScreen.ResumeLayout(false);
             this.panelMatchScreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerUpDown)).EndInit();
@@ -620,6 +667,8 @@
             this.panelHomeScreen.PerformLayout();
             this.panelStatsScreen.ResumeLayout(false);
             this.panelStatsScreen.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,8 +710,11 @@
         private System.Windows.Forms.CheckBox computerCheck;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelHomeScreen;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panelStatsScreen;
+        private System.Windows.Forms.TextBox txtStats;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelStatsScreen;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
