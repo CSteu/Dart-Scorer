@@ -14,7 +14,7 @@ namespace Dart_Scorer
         public Match(string user)
         {
             InitializeComponent();
-            panelHomeScreen.Hide();
+            //panelHomeScreen.Hide();
             panelStatsScreen.Hide();
             txtPlayer2.Hide();
             txtPlayer3.Hide();
@@ -169,21 +169,21 @@ namespace Dart_Scorer
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            panelHomeScreen.Show();
+            //panelHomeScreen.Show();
             panelMatchScreen.Show();
             panelStatsScreen.Hide();
         }
 
         private void btnMatch_Click(object sender, EventArgs e)
         {
-            panelHomeScreen.Hide();
+           // panelHomeScreen.Hide();
             panelMatchScreen.Show();
             panelStatsScreen.Hide();
         }
 
         private void btnStats_Click(object sender, EventArgs e)
         {
-            panelHomeScreen.Show();
+           //panelHomeScreen.Show();
             panelMatchScreen.Show();
             panelStatsScreen.Show();
             updateStatsScreen();

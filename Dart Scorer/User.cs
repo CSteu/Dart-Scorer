@@ -29,6 +29,29 @@ namespace DartScorer.Untitled
             this.totDarts = totDarts;
             this.matchesPlayed = matchesPlayed;
         }
+        public User readData(string usr, string pass)
+        {
+            string file = "C:\\Users\\Chase\\Source\\Repos\\Dart-Scorer\\Dart Scorer\\db.txt";
+            if (File.Exists(file))
+            {
+                using (StreamReader sr = new StreamReader(file))
+                {
+                    int currentLineNum = 0;
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] parts = line.Split(',');
+                        if (parts[0] == usr && parts[1] == pass)
+                        {
+                            User user = new User(parts[0], parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]));
+                            return user;
+                        }
+                        currentLineNum++;
+                    }
+                }
+            }
+            return null;
+        }
 
         public void writeData()
         {

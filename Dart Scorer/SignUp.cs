@@ -14,7 +14,7 @@ namespace Dart_Scorer
         }
 
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnSubmit_Click_1(object sender, EventArgs e)
         {
             User user = new User(txtUsername.Text, txtPassword.Text, txtNickname.Text, 0, 0, 0);
             user.writeData();

@@ -51,12 +51,6 @@
             this.txtPlayer4Score = new System.Windows.Forms.TextBox();
             this.txtComputerScore = new System.Windows.Forms.TextBox();
             this.txtComputer = new System.Windows.Forms.TextBox();
-            this.pbComputer = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbPlayer2 = new System.Windows.Forms.PictureBox();
-            this.pbPlayer3 = new System.Windows.Forms.PictureBox();
-            this.pbPlayer4 = new System.Windows.Forms.PictureBox();
-            this.pbPlayer1 = new System.Windows.Forms.PictureBox();
             this.panelPlayer1 = new System.Windows.Forms.Panel();
             this.panelPlayer2 = new System.Windows.Forms.Panel();
             this.panelPlayer3 = new System.Windows.Forms.Panel();
@@ -66,19 +60,25 @@
             this.labelWinner = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtLegs = new System.Windows.Forms.TextBox();
+            this.pbPlayer3 = new System.Windows.Forms.PictureBox();
+            this.pbComputer = new System.Windows.Forms.PictureBox();
+            this.pbPlayer2 = new System.Windows.Forms.PictureBox();
+            this.pbPlayer4 = new System.Windows.Forms.PictureBox();
+            this.pbPlayer1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbComputer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1)).BeginInit();
             this.panelPlayer1.SuspendLayout();
             this.panelPlayer2.SuspendLayout();
             this.panelPlayer3.SuspendLayout();
             this.panelPlayer4.SuspendLayout();
             this.panelComputer.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComputer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtScore
@@ -373,67 +373,6 @@
             this.txtComputer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtComputer.TextChanged += new System.EventHandler(this.txtComputer_TextChanged);
             // 
-            // pbComputer
-            // 
-            this.pbComputer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.pbComputer.Image = ((System.Drawing.Image)(resources.GetObject("pbComputer.Image")));
-            this.pbComputer.Location = new System.Drawing.Point(0, 0);
-            this.pbComputer.Name = "pbComputer";
-            this.pbComputer.Size = new System.Drawing.Size(49, 50);
-            this.pbComputer.TabIndex = 30;
-            this.pbComputer.TabStop = false;
-            this.pbComputer.Click += new System.EventHandler(this.pbComputer_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbPlayer2
-            // 
-            this.pbPlayer2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.pbPlayer2.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer2.Image")));
-            this.pbPlayer2.Location = new System.Drawing.Point(0, 0);
-            this.pbPlayer2.Name = "pbPlayer2";
-            this.pbPlayer2.Size = new System.Drawing.Size(49, 50);
-            this.pbPlayer2.TabIndex = 23;
-            this.pbPlayer2.TabStop = false;
-            // 
-            // pbPlayer3
-            // 
-            this.pbPlayer3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.pbPlayer3.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer3.Image")));
-            this.pbPlayer3.Location = new System.Drawing.Point(0, 0);
-            this.pbPlayer3.Name = "pbPlayer3";
-            this.pbPlayer3.Size = new System.Drawing.Size(49, 50);
-            this.pbPlayer3.TabIndex = 21;
-            this.pbPlayer3.TabStop = false;
-            // 
-            // pbPlayer4
-            // 
-            this.pbPlayer4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.pbPlayer4.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer4.Image")));
-            this.pbPlayer4.Location = new System.Drawing.Point(0, 0);
-            this.pbPlayer4.Name = "pbPlayer4";
-            this.pbPlayer4.Size = new System.Drawing.Size(49, 50);
-            this.pbPlayer4.TabIndex = 19;
-            this.pbPlayer4.TabStop = false;
-            // 
-            // pbPlayer1
-            // 
-            this.pbPlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.pbPlayer1.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer1.Image")));
-            this.pbPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.pbPlayer1.Name = "pbPlayer1";
-            this.pbPlayer1.Size = new System.Drawing.Size(49, 50);
-            this.pbPlayer1.TabIndex = 17;
-            this.pbPlayer1.TabStop = false;
-            // 
             // panelPlayer1
             // 
             this.panelPlayer1.Controls.Add(this.pbPlayer1);
@@ -505,7 +444,7 @@
             this.labelWinner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.labelWinner.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWinner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.labelWinner.Location = new System.Drawing.Point(180, 23);
+            this.labelWinner.Location = new System.Drawing.Point(177, 24);
             this.labelWinner.Multiline = true;
             this.labelWinner.Name = "labelWinner";
             this.labelWinner.Size = new System.Drawing.Size(439, 221);
@@ -545,6 +484,67 @@
             this.txtLegs.Text = "Best of 1 Legs";
             this.txtLegs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pbPlayer3
+            // 
+            this.pbPlayer3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.pbPlayer3.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer3.Image")));
+            this.pbPlayer3.Location = new System.Drawing.Point(0, 0);
+            this.pbPlayer3.Name = "pbPlayer3";
+            this.pbPlayer3.Size = new System.Drawing.Size(49, 50);
+            this.pbPlayer3.TabIndex = 21;
+            this.pbPlayer3.TabStop = false;
+            // 
+            // pbComputer
+            // 
+            this.pbComputer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.pbComputer.Image = ((System.Drawing.Image)(resources.GetObject("pbComputer.Image")));
+            this.pbComputer.Location = new System.Drawing.Point(0, 0);
+            this.pbComputer.Name = "pbComputer";
+            this.pbComputer.Size = new System.Drawing.Size(49, 50);
+            this.pbComputer.TabIndex = 30;
+            this.pbComputer.TabStop = false;
+            this.pbComputer.Click += new System.EventHandler(this.pbComputer_Click);
+            // 
+            // pbPlayer2
+            // 
+            this.pbPlayer2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.pbPlayer2.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer2.Image")));
+            this.pbPlayer2.Location = new System.Drawing.Point(0, 0);
+            this.pbPlayer2.Name = "pbPlayer2";
+            this.pbPlayer2.Size = new System.Drawing.Size(49, 50);
+            this.pbPlayer2.TabIndex = 23;
+            this.pbPlayer2.TabStop = false;
+            // 
+            // pbPlayer4
+            // 
+            this.pbPlayer4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.pbPlayer4.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer4.Image")));
+            this.pbPlayer4.Location = new System.Drawing.Point(0, 0);
+            this.pbPlayer4.Name = "pbPlayer4";
+            this.pbPlayer4.Size = new System.Drawing.Size(49, 50);
+            this.pbPlayer4.TabIndex = 19;
+            this.pbPlayer4.TabStop = false;
+            // 
+            // pbPlayer1
+            // 
+            this.pbPlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.pbPlayer1.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayer1.Image")));
+            this.pbPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.pbPlayer1.Name = "pbPlayer1";
+            this.pbPlayer1.Size = new System.Drawing.Size(49, 50);
+            this.pbPlayer1.TabIndex = 17;
+            this.pbPlayer1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(162, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,12 +564,6 @@
             this.Text = "Game";
             this.Load += new System.EventHandler(this.Game_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbComputer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1)).EndInit();
             this.panelPlayer1.ResumeLayout(false);
             this.panelPlayer1.PerformLayout();
             this.panelPlayer2.ResumeLayout(false);
@@ -582,6 +576,12 @@
             this.panelComputer.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComputer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
