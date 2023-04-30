@@ -31,7 +31,7 @@ namespace DartScorer.Untitled
         }
         public User readData(string usr, string pass)
         {
-            string file = "C:\\Users\\Chase\\Source\\Repos\\Dart-Scorer\\Dart Scorer\\db.txt";
+            string file = "../db.txt";
             if (File.Exists(file))
             {
                 using (StreamReader sr = new StreamReader(file))

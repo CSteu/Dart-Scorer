@@ -15,8 +15,8 @@ namespace Dart_Scorer
         public int firstTo;
         private string user;
         public int turn = 0;
-        Player[] player;
-        Computer computer;
+        HumanPlayer[] player;
+        ComputerPlayer computer;
         private bool computerGame;
 
         StatsSheet statsSheet = new StatsSheet();
@@ -28,14 +28,14 @@ namespace Dart_Scorer
             computerGame = comp;
             firstTo = first;
             this.user = user;
-            player = new Player[numPlayers];
+            player = new HumanPlayer[numPlayers];
             for (int i = 0; i < numPlayers; i++)
             {
-                player[i] = new Player(n[i], score);
+                player[i] = new HumanPlayer(n[i], score);
             }
             if (comp)
             {
-                computer = new Computer(compdif, score);
+                computer = new ComputerPlayer(compdif, score);
             }
             gameSetup();
         }
@@ -165,7 +165,17 @@ namespace Dart_Scorer
 
         private void btnEnterScore_Click(object sender, EventArgs e)
         {
-            int currScore = int.Parse(txtCurrScore.Text);
+            bool validInput = false;
+            int currScore = 0;
+            if(int.TryParse(txtCurrScore.Text, out currScore))
+            {
+                validInput = true;
+            }
+            else
+            {
+                return;
+            }
+            
             int up = turn % totPlayers;
 
             if (currScore < 0 || currScore > 180)
@@ -212,22 +222,22 @@ namespace Dart_Scorer
             int up = x % numPlayers;
             if (!computerGame)
             {
-                txtStats.Text = player[up].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2)
-                    + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) + Environment.NewLine + "Total Points Scored: "
+                txtStats.Text = player[up].name + " Match Stats:" + Environment.NewLine + "PPR:" + Environment.NewLine + (float)Math.Round(statsSheet.threeDartAverage(up), 2)
+                    + Environment.NewLine + "PPD:" + Environment.NewLine + (float)Math.Round(statsSheet.average[up], 2) + Environment.NewLine + "Total Points Scored: "
                     + Environment.NewLine + statsSheet.totalPoints[up] + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[up];
             }
             else
             {
                 if (x % 2 == 0)
                 {
-                    txtStats.Text = player[0].name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[0], 2)
-                        + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[0], 2) + Environment.NewLine + "Total Points Scored: "
+                    txtStats.Text = player[0].name + " Match Stats:" + Environment.NewLine + "PPR:" + Environment.NewLine + (float)Math.Round(statsSheet.threeDartAverage(0), 2)
+                    + Environment.NewLine + "PPD:" + Environment.NewLine + (float)Math.Round(statsSheet.average[0], 2) + Environment.NewLine + "Total Points Scored: "
                         + Environment.NewLine + statsSheet.totalPoints[0] + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[0];
                 }
                 else
                 {
-                    txtStats.Text = computer.name + " Match Stats:" + Environment.NewLine + "Three Dart Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[4], 2)
-                        + Environment.NewLine + "First Nine Average:" + Environment.NewLine + (float)Math.Round(statsSheet.average[4], 2) + Environment.NewLine + "Total Points Scored: "
+                    txtStats.Text = computer.name + " Match Stats:" + Environment.NewLine + "PPR:" + Environment.NewLine + (float)Math.Round(statsSheet.threeDartAverage(4), 2)
+                    + Environment.NewLine + "PPD:" + Environment.NewLine + (float)Math.Round(statsSheet.average[4], 2) + Environment.NewLine + "Total Points Scored: "
                         + Environment.NewLine + statsSheet.totalPoints[4] + Environment.NewLine + "Darts Thrown:" + Environment.NewLine + statsSheet.totalDarts[4];
                 }
             }

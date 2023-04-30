@@ -29,9 +29,9 @@ namespace DartScorer.Untitled
 			average[playerNum] = (float)totalPoints[playerNum] / totalDarts[playerNum];
 		}
 
-        public void firstNineAverage()
+        public float threeDartAverage(int playerNum)
 		{
-			throw new NotImplementedException();
+			return average[playerNum] * 3;
 		}
 
 		public void addScore(int score, int player)

@@ -1,64 +1,54 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace DartScorer.Untitled
+namespace Dart_Scorer
 {
-	public class Player
-	{
-		public string name;
-		public int score;
-		public int dartsThrown;
-		public int legs = 0;
+    public abstract class Player : DartScorer.Untitled.User
+    {
+        public string name;
+        public int score;
+        public int dartsThrown;
+        public int legs = 0;
 
-		public Player()
-		{
-			name = "Player";
-		}
+        public DartScorer.Untitled.StatsSheet StatsSheet
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
-		public Player(string player, int startScore)
-		{
-			name = player;
-			score = startScore;
-		}
+        public DartScorer.Untitled.User User
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
-		public void decrementScore(int lastTurn)
-		{
-			score -= lastTurn;
-		}
+        public void incrementLegs()
+        {
+            legs++;
+        }
 
-		public int getScore()
-		{
-			return score;
-		}
+        public abstract void decrementScore(int lastTurn);
 
-		public void resetScore()
-		{
-			score = 0;
-		}
+        public void incrementDarts(int darts)
+        {
+            dartsThrown += darts;
+        }
 
-		public void incrementLegs()
-		{
-			legs++;
-		}
+        public int getDarts()
+        {
+            return dartsThrown;
+        }
 
-		public void incrementDarts(int darts)
-		{
-			dartsThrown += darts;
-		}
-
-		public int getDarts()
-		{
-			return dartsThrown;
-		}
-
-		public void resetDarts()
-		{
-			dartsThrown = 0;
-		}
-	}
+        public void resetDarts()
+        {
+            dartsThrown = 0;
+        }
+    }
 }

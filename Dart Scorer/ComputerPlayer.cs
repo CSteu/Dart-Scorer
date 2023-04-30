@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dart_Scorer;
 
 namespace DartScorer.Untitled
 {
-	public class Computer
+	public class ComputerPlayer : Player
 	{
-		public string name = "Dartbot";
 		int skillLevel;
-		public int score;
-		public int dartsThrown;
 		public int[] turns = new int[100];
 		private int currTurn = 0;
-		public int legs = 0;
 
-		public Computer(int dif, int scr)
+		public ComputerPlayer(int dif, int scr)
 		{
-			skillLevel = dif;
+            name = "Dartbot";
+            skillLevel = dif;
             score = scr;
 			generateTurns();
 		}
@@ -30,7 +28,7 @@ namespace DartScorer.Untitled
 			if(score < 160)
 			{
 				currScore /= 2;
-				score -= currScore;
+				decrementScore(currScore);
 				if (score - currScore < 0)
 					score = 0;
 			}
@@ -42,7 +40,12 @@ namespace DartScorer.Untitled
 			return currScore;
         }
 
-		public void generateTurns()
+        public override void decrementScore(int lastTurn)
+        {
+            score -= lastTurn;
+        }
+
+        public void generateTurns()
 		{
 			Random rand = new Random();
 			int currScore;
@@ -65,26 +68,6 @@ namespace DartScorer.Untitled
 		public void resetScore()
 		{
 			score = 0;
-		}
-
-		public void incrementDarts(int num)
-		{
-			dartsThrown += num;
-		}
-
-        public void incrementLegs()
-        {
-            legs++;
-        }
-
-        public int getDarts()
-		{
-			return dartsThrown;
-		}
-
-		public void resetDarts()
-		{
-			dartsThrown = 0;
 		}
 	}
 }
