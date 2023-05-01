@@ -23,5 +23,17 @@ namespace Dart_Scorer
             form1.Show();
             this.Hide();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Login form3 = new Login();
+            form3.Show();
+            this.Hide();
+        }
     }
 }

@@ -3,21 +3,21 @@
   <Class Name="DartScorer.Untitled.ComputerPlayer">
     <Position X="3" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACABBAAAAAAAABCAAQAAAAAAAACAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAABBAAAAAAAABCAAQAAAAAAAACAAAAAAABAAAA=</HashCode>
       <FileName>ComputerPlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DartScorer.Untitled.HumanPlayer">
     <Position X="6.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>HumanPlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DartScorer.Untitled.StatsSheet">
     <Position X="10.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAEAIAAAEAAAAgAwAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAEAIAAAEAAAAAAwAAA=</HashCode>
       <FileName>StatsSheet.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -30,17 +30,10 @@
   </Class>
   <Class Name="Dart_Scorer.Player">
     <Position X="6.25" Y="1.75" Width="1.5" />
-    <Members>
-      <Property Name="User" Hidden="true" />
-    </Members>
     <TypeIdentifier>
-      <HashCode>AAABAAgAAMAAAAAAAAAIAQAAAABEEAAIAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAMAAAAAAAAAIAQAAAABEEAAIAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="StatsSheet" />
-      <Property Name="User" />
-    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

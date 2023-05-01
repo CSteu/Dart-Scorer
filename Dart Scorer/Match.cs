@@ -162,11 +162,6 @@ namespace Dart_Scorer
             Application.Exit();
         }
 
-        private void Match_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             //panelHomeScreen.Show();

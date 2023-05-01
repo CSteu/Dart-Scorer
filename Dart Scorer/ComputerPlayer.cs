@@ -9,8 +9,8 @@ namespace DartScorer.Untitled
 {
 	public class ComputerPlayer : Player
 	{
-		int skillLevel;
-		public int[] turns = new int[100];
+		private int skillLevel;
+		private int[] turns = new int[100];
 		private int currTurn = 0;
 
 		public ComputerPlayer(int dif, int scr)
@@ -42,7 +42,7 @@ namespace DartScorer.Untitled
 
         public override void decrementScore(int lastTurn)
         {
-            score -= lastTurn;
+            score -= turns[currTurn];
         }
 
         public void generateTurns()
@@ -65,9 +65,5 @@ namespace DartScorer.Untitled
 			return score;
 		}
 
-		public void resetScore()
-		{
-			score = 0;
-		}
 	}
 }

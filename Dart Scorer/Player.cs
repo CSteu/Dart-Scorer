@@ -6,28 +6,12 @@ using System.Threading.Tasks;
 
 namespace Dart_Scorer
 {
-    public abstract class Player : DartScorer.Untitled.User
+    public abstract class Player 
     {
         public string name;
         public int score;
         public int dartsThrown;
         public int legs = 0;
-
-        public DartScorer.Untitled.StatsSheet StatsSheet
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public DartScorer.Untitled.User User
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
         public void incrementLegs()
         {

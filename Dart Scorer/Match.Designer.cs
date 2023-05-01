@@ -625,7 +625,6 @@
             this.Name = "Match";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Match";
-            this.Load += new System.EventHandler(this.Match_Load);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

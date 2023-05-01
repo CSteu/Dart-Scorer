@@ -32,10 +32,5 @@ namespace DartScorer.Untitled
 		{
 			return score;
 		}
-
-		public void resetScore()
-		{
-			score = 0;
-		}
 	}
 }

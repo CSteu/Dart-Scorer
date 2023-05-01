@@ -41,6 +41,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNickname = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +51,12 @@
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            this.label4.Location = new System.Drawing.Point(125, 382);
+            this.label4.Location = new System.Drawing.Point(169, 385);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 18);
             this.label4.TabIndex = 25;
             this.label4.Text = "EXIT";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnSubmit
             // 
@@ -178,11 +180,25 @@
             this.txtNickname.Size = new System.Drawing.Size(236, 20);
             this.txtNickname.TabIndex = 27;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.label1.Location = new System.Drawing.Point(86, 385);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 18);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "<-BACK";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 486);
+            this.ClientSize = new System.Drawing.Size(308, 480);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel3);
@@ -196,7 +212,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUsername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "SignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -218,5 +236,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtNickname;
+        private System.Windows.Forms.Label label1;
     }
 }

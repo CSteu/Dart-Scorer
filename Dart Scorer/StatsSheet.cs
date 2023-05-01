@@ -9,7 +9,6 @@ namespace DartScorer.Untitled
 	public class StatsSheet
 	{
 		public float[] average = new float[5];
-        public float[] firstNine = new float[5];
 		public int[] totalPoints = new int[5];
 		public int[] totalDarts = new int[5];
 
