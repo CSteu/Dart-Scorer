@@ -100,10 +100,11 @@ namespace Dart_Scorer
 
         public User readData(string usr, string pass)
         {
-            string file = "C:\\Users\\Chase\\Source\\Repos\\Dart-Scorer\\Dart Scorer\\db.txt";
-            if (File.Exists(file))
+            string file = "db.txt";
+            string path = Path.Combine(Directory.GetCurrentDirectory(), file);
+            if (File.Exists(path))
             {
-                using (StreamReader sr = new StreamReader(file))
+                using (StreamReader sr = new StreamReader(path))
                 {
                     int currentLineNum = 0;
                     string line;

@@ -336,5 +336,12 @@ namespace Dart_Scorer
             int totMatches = user1.matchesPlayed + 1;
             user1.updateStats(user, totPoints, totDarts, totMatches);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Match form1 = new Match(user);
+            form1.Show();
+            this.Close();
+        }
     }
 }

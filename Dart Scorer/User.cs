@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DartScorer.Untitled
 {
@@ -31,10 +32,11 @@ namespace DartScorer.Untitled
         }
         public User readData(string usr, string pass)
         {
-            string file = "../db.txt";
-            if (File.Exists(file))
+            string file = "db.txt";
+            string path = Path.Combine(Directory.GetCurrentDirectory(), file);
+            if (File.Exists(path))
             {
-                using (StreamReader sr = new StreamReader(file))
+                using (StreamReader sr = new StreamReader(path))
                 {
                     int currentLineNum = 0;
                     string line;
@@ -55,8 +57,9 @@ namespace DartScorer.Untitled
 
         public void writeData()
         {
-            string file = "C:\\Users\\Chase\\Source\\Repos\\Dart-Scorer\\Dart Scorer\\db.txt";
-            using (StreamWriter sw = new StreamWriter(file, true))
+            string file = "db.txt";
+            string path = Path.Combine(Directory.GetCurrentDirectory(), file);
+            using (StreamWriter sw = new StreamWriter(path, true))
             {
                 string line = string.Format("{0},{1},{2},{3},{4}, {5}", username, password, nickname, totPoints, totDarts, matchesPlayed);
                 sw.WriteLine(line);
@@ -65,10 +68,12 @@ namespace DartScorer.Untitled
 
         public User getStats(string usr)
         {
-            string file = "C:\\Users\\Chase\\Source\\Repos\\Dart-Scorer\\Dart Scorer\\db.txt";
-            if (File.Exists(file))
+            string file = "db.txt";
+            string path = Path.Combine(Directory.GetCurrentDirectory(), file);
+            MessageBox.Show(path);
+            if (File.Exists(path))
             {
-                using (StreamReader sr = new StreamReader(file))
+                using (StreamReader sr = new StreamReader(path))
                 {
                     int currentLineNum = 0;
                     string line;
@@ -89,17 +94,18 @@ namespace DartScorer.Untitled
 
         public void updateStats(string usr, int totPoints, int totDarts, int matchesPlayed)
         {
-            string file = "C:\\Users\\Chase\\Source\\Repos\\Dart-Scorer\\Dart Scorer\\db.txt";
-            if (File.Exists(file))
+            string file = "db.txt";
+            string path = Path.Combine(Directory.GetCurrentDirectory(), file);
+            if (File.Exists(path))
             {
-                string[] lines = File.ReadAllLines(file);
+                string[] lines = File.ReadAllLines(path);
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
                     if (parts[0] == usr)
                     {
                         lines[i] = string.Format("{0},{1},{2},{3},{4},{5}", username, password, nickname, totPoints, totDarts, matchesPlayed);
-                        File.WriteAllLines(file, lines);
+                        File.WriteAllLines(path, lines);
                         return;
                     }
                 }
